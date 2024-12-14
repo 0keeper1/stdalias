@@ -14,8 +14,8 @@ header_file = files('include/stdalias.h')
 
 man_file = files('man/stdalias.3')
 
-stdalias_lib = library(
-        'stdalias',
+stdalias_lib = static_library(
+        'libstdalias',
         include_directories : headers,
         sources : [],
         native : true,
