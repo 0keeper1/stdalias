@@ -14,6 +14,19 @@ header_file = files('include/stdalias.h')
 
 man_file = files('man/stdalias.3')
 
+stdalias_lib = library(
+        'stdalias',
+        include_directories : headers,
+        sources : [],
+        native : true,
+        install : true
+)
+
+stdalias_dep = declare_dependency(
+        include_directories : headers,
+        link_with : stdalias_lib
+)
+
 install_man(man_file)
 
 install_headers(header_file)
@@ -24,5 +37,3 @@ pkg_config.generate(
         name: 'stdalias',
         description: 'A single-header library providing standard type aliases',
 )
-
-static_lib = static_library('stdalias', sources: [])
