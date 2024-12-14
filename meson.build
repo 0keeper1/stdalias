@@ -18,7 +18,6 @@ stdalias_lib = static_library(
         'libstdalias',
         include_directories : headers,
         sources : [],
-        native : true,
         install : true
 )
 
