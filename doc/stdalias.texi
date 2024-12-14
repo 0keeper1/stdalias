@@ -1,0 +1,195 @@
+\input texinfo @c -*-texinfo-*-
+@setfilename stdalias.texi
+@settitle stdalias Documentation
+
+@chapter Types
+
+This document describes a collection of C types used for representing integers, floating point numbers, and characters of various sizes, as well as some utility structures.
+
+@section Integer Types
+
+The following integer types are used for storing values of different sizes. These types are typically used in low-level programming and systems development.
+
+@subsection byte
+@cindex byte
+@begin{itemize}
+@item typedef uint8_t byte
+The `byte` type represents an 8-bit unsigned integer (1 byte). It can hold values ranging from 0 to 255, and is equivalent to `uint8_t` as defined in `<stdint.h>`. This type is commonly used for byte-level data manipulation.
+@end{itemize}
+
+@subsection u8
+@cindex u8
+@begin{itemize}
+@item typedef uint8_t u8
+The `u8` type is a synonym for `byte` and is used for storing an unsigned 8-bit integer. It is often employed to represent small data, such as single ASCII characters or other small values.
+@end{itemize}
+
+@subsection i8
+@cindex i8
+@begin{itemize}
+@item typedef int8_t i8
+The `i8` type represents a signed 8-bit integer (1 byte). It can hold values from -128 to 127. This type is often used when small signed numeric data is required, such as byte-level operations.
+@end{itemize}
+
+@subsection u16
+@cindex u16
+@begin{itemize}
+@item typedef uint16_t u16
+The `u16` type represents an unsigned 16-bit integer (2 bytes), with a range from 0 to 65535. It is used in situations where slightly larger values than `u8` are needed, such as for small counters or range values.
+@end{itemize}
+
+@subsection i16
+@cindex i16
+@begin{itemize}
+@item typedef int16_t i16
+The `i16` type represents a signed 16-bit integer (2 bytes). Its range is from -32768 to 32767, and it is used in contexts where small signed integers are required.
+@end{itemize}
+
+@subsection u32
+@cindex u32
+@begin{itemize}
+@item typedef uint32_t u32
+The `u32` type represents an unsigned 32-bit integer (4 bytes), capable of holding values from 0 to 4294967295. It is commonly used in contexts requiring larger numeric values, such as for timestamps, larger counters, or addressing.
+@end{itemize}
+
+@subsection i32
+@cindex i32
+@begin{itemize}
+@item typedef int32_t i32
+The `i32` type represents a signed 32-bit integer (4 bytes), with a range from -2147483648 to 2147483647. This is the standard type for general-purpose signed integer storage in many systems.
+@end{itemize}
+
+@subsection u64
+@cindex u64
+@begin{itemize}
+@item typedef uint64_t u64
+The `u64` type represents an unsigned 64-bit integer (8 bytes). It can hold values from 0 to 18446744073709551615. It is used when even larger numbers are required, such as in certain high-performance computing contexts.
+@end{itemize}
+
+@subsection i64
+@cindex i64
+@begin{itemize}
+@item typedef int64_t i64
+The `i64` type represents a signed 64-bit integer (8 bytes), which holds values from -9223372036854775808 to 9223372036854775807. It is suitable for applications that require large signed integer values, such as financial systems or media processing.
+@end{itemize}
+
+@subsection i128
+@cindex i128
+@begin{itemize}
+@item typedef __int128 i128
+The `i128` type is a signed 128-bit integer, available as a GCC and Clang extension. This type is used for operations requiring extremely large integers, such as in cryptography or high-precision computations.
+@end{itemize}
+
+@subsection u128
+@cindex u128
+@begin{itemize}
+@item typedef unsigned __int128 u128
+The `u128` type is an unsigned 128-bit integer, also an extension in GCC and Clang. It is used in applications that need unsigned integers beyond 64-bit capacity, for tasks like large-scale computations.
+@end{itemize}
+
+@subsection usize
+@cindex usize
+@begin{itemize}
+@item typedef size_t usize
+The `usize` type is an alias for `size_t`, which is an unsigned integer type used to represent the size of an object in memory. Its size depends on the platform: it is typically 32-bit on 32-bit systems and 64-bit on 64-bit systems.
+@end{itemize}
+
+@subsection iptr
+@cindex iptr
+@begin{itemize}
+@item typedef intptr_t iptr
+The `iptr` type represents a signed integer used for storing the value of a pointer. It is useful for pointer arithmetic and comparison but should not be used for direct dereferencing or manipulation of pointers.
+@end{itemize}
+
+@subsection ptr
+@cindex ptr
+@begin{itemize}
+@item typedef uintptr_t ptr
+The `ptr` type represents an unsigned integer used for pointer storage. It is safe for general pointer arithmetic and manipulation in most systems, representing the memory address of an object.
+@end{itemize}
+
+@subsection maxi
+@cindex maxi
+@begin{itemize}
+@item typedef intmax_t maxi
+The `maxi` type represents the largest signed integer type available on the system. It is used for operations that need to handle the maximum range of signed integers across various platforms.
+@end{itemize}
+
+@subsection umaxi
+@cindex umaxi
+@begin{itemize}
+@item typedef uintmax_t umaxi
+The `umaxi` type represents the largest unsigned integer type available. It provides the greatest possible range for unsigned integers, and it is used for tasks requiring very large unsigned values.
+@end{itemize}
+
+@section Floating Point Types
+
+The following floating-point types are used for representing real numbers with different levels of precision.
+
+@subsection f32
+@cindex f32
+@begin{itemize}
+@item typedef float f32
+The `f32` type is a 32-bit floating point number, also known as `float`. It is used for single-precision real numbers and has a typical range of approximately ±3.4×10^38 with 6-7 decimal digits of precision.
+@end{itemize}
+
+@subsection f64
+@cindex f64
+@begin{itemize}
+@item typedef double f64
+The `f64` type represents a 64-bit floating point number, also known as `double`. It provides double-precision with a range of approximately ±1.8×10^308 and 15-16 decimal digits of precision.
+@end{itemize}
+
+@subsection f128
+@cindex f128
+@begin{itemize}
+@item typedef long double f128
+The `f128` type represents a 128-bit floating point number, providing quadruple precision. This type is useful for computations that require extremely high precision and is often implemented as `long double`.
+@end{itemize}
+
+@section Character Types
+
+@subsection wchar
+@cindex wchar
+@begin{itemize}
+@item typedef wchar_t wchar
+The `wchar` type is a wide character, typically used for encoding larger character sets like UTF-16 or UTF-32. The size of `wchar_t` is platform-dependent, typically 2 bytes on systems using UTF-16 and 4 bytes for UTF-32.
+@end{itemize}
+
+@subsection wint
+@cindex wint
+@begin{itemize}
+@item typedef wint_t wint
+The `wint_t` type is used for wide character I/O operations and is typically used in conjunction with the `wchar_t` type for managing wide-character strings in a portable way.
+@end{itemize}
+
+@section Macros
+
+@subsection __asm__
+@cindex __asm__
+@begin{itemize}
+@item #define __asm__ asm
+This macro redefines `__asm__` as the `asm` keyword used for inline assembly in C. It allows assembly instructions to be embedded directly in C code, typically for low-level optimizations.
+@end{itemize}
+
+@subsection wstring
+@cindex wstring
+@begin{itemize}
+@item #define struct wstring {usize cap; wchar* pointer; usize len;}
+This macro defines the `wstring` structure, which represents a wide character string. It consists of:
+- `cap`: The total allocated size of the string in bytes.
+- `pointer`: A pointer to the array of wide characters.
+- `len`: The length of the string excluding the null terminator.
+@end{itemize}
+
+@subsection string
+@cindex string
+@begin{itemize}
+@item #define struct string {usize cap; char* pointer; usize len;}
+The `string` macro defines a structure representing a traditional C string. It includes:
+- `cap`: The capacity of the string in bytes.
+- `pointer`: A pointer to the character array.
+- `len`: The length of the string, not counting the null terminator.
+@end{itemize}
+
+@bye

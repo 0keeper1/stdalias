@@ -1,0 +1,108 @@
+.\" Manpage for stdalias library
+.TH STDALIAS 3 "December 2024" "1.0" "C Library"
+
+.SH NAME
+stdalias \- A collection of common type aliases for numeric types, strings, and more in C
+
+.SH SYNOPSIS
+.B #include <stdalias.h>
+
+.SH DESCRIPTION
+The stdalias library defines several type aliases for commonly used data types
+in C, including integer types, floating-point types, string types, and more.
+These types provide a convenient way to refer to standard data types and are
+commonly used in C programming for type safety, portability, and better readability.
+
+The types defined in the stdalias library include:
+- `byte`, `u8`, `i8`, `u16`, `i16`, `u32`, `i32`, `u64`, `i64`, `u128`, `i128`
+- `usize`, `iptr`, `ptr`, `f32`, `f64`, `f128`, `maxi`, `umaxi`
+- `wchar`, `wint`, `string`, `wstring`
+
+.SH TYPES
+.TP
+.B byte
+A synonym for `uint8_t`, representing an 8-bit unsigned integer (1 byte).
+.TP
+.B u8
+A synonym for `byte`, representing an 8-bit unsigned integer (1 byte).
+.TP
+.B i8
+A signed 8-bit integer (1 byte).
+.TP
+.B u16
+A 16-bit unsigned integer (2 bytes).
+.TP
+.B i16
+A signed 16-bit integer (2 bytes).
+.TP
+.B u32
+A 32-bit unsigned integer (4 bytes).
+.TP
+.B i32
+A signed 32-bit integer (4 bytes).
+.TP
+.B u64
+A 64-bit unsigned integer (8 bytes).
+.TP
+.B i64
+A signed 64-bit integer (8 bytes).
+.TP
+.B u128
+An unsigned 128-bit integer.
+.TP
+.B i128
+A signed 128-bit integer.
+.TP
+.B usize
+An alias for `size_t`, representing the size of an object in memory.
+.TP
+.B iptr
+A signed integer type used to represent the size of a pointer (void*).
+.TP
+.B ptr
+An unsigned integer type used to represent the size of a pointer (void*).
+.TP
+.B f32
+A 32-bit floating point number (4 bytes).
+.TP
+.B f64
+A 64-bit floating point number (8 bytes).
+.TP
+.B f128
+A 128-bit floating point number (16 bytes).
+.TP
+.B maxi
+The largest signed integer type available on the target platform.
+.TP
+.B umaxi
+The largest unsigned integer type available on the target platform.
+.TP
+.B wchar
+A Unicode character type, typically used for extended character sets.
+.TP
+.B wint
+A wide character type used for I/O operations with extended characters.
+.TP
+.B string
+A struct representing a standard character string in memory, including a length and capacity.
+.TP
+.B wstring
+A struct representing a wide character string in memory, including a length and capacity.
+.TP
+.B __asm__
+A macro redefines `__asm__` as `asm` for inline assembly support.
+
+.SH USAGE EXAMPLES
+#include <stdalias.h>
+
+.SH SEE ALSO
+.B stdlib(3)
+.B stdint(3)
+.B wchar(3)
+.B ctype(3)
+
+.SH AUTHOR
+Written by 0xKeeper.
+
+.SH COPYRIGHT
+Copyright © 2024 0xKeeper.
