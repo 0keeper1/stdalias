@@ -1,6 +1,6 @@
-# stdalias
+# unstdalias
 
-`stdalias` is a simple C library that provides type aliases for common C types, making your code more readable and portable across different systems. This single-header library helps in defining standard types such as `byte`, `u8`, `i8`, and more.
+`unstdalias` is a simple C library that provides type aliases for common C types, making your code more readable and portable across different systems. This single-header library helps in defining standard types such as `byte`, `u8`, `i8`, and more.
 
 ## Features
 
@@ -13,16 +13,16 @@
 Clone the repository and build with Meson:
 
 ```bash
-git clone https://github.com/0keeper1/stdalias.git
-cd stdalias
+git clone https://github.com/0keeper1/unstdalias.git
+cd unstdalias
 meson setup build
 meson compile -C build
 ```
 
-To use in your project, simply include the `stdalias.h` header:
+To use in your project, simply include the `unstdalias.h` header:
 
 ```c
-#include "stdalias.h"
+#include "unstdalias.h"
 ```
 
 ## Aliased Types

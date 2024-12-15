@@ -1,19 +1,19 @@
-.\" Manpage for stdalias library
-.TH STDALIAS 3 "December 2024" "1.0" "C Library"
+.\" Manpage for unstdalias library
+.TH UNSTDALIAS 3 "December 2024" "1.0" "C Library"
 
 .SH NAME
-stdalias \- A collection of common type aliases for numeric types, strings, and more in C
+unstdalias \- A collection of common type aliases for numeric types, strings, and more in C
 
 .SH SYNOPSIS
-.B #include <stdalias.h>
+.B #include <unstdalias.h>
 
 .SH DESCRIPTION
-The stdalias library defines several type aliases for commonly used data types
+The unstdalias library defines several type aliases for commonly used data types
 in C, including integer types, floating-point types, string types, and more.
 These types provide a convenient way to refer to standard data types and are
 commonly used in C programming for type safety, portability, and better readability.
 
-The types defined in the stdalias library include:
+The types defined in the unstdalias library include:
 - `byte`, `u8`, `i8`, `u16`, `i16`, `u32`, `i32`, `u64`, `i64`, `u128`, `i128`
 - `usize`, `iptr`, `ptr`, `f32`, `f64`, `f128`, `maxi`, `umaxi`
 - `wchar`, `wint`, `string`, `wstring`
@@ -93,7 +93,7 @@ A struct representing a wide character string in memory, including a length and 
 A macro redefines `__asm__` as `asm` for inline assembly support.
 
 .SH USAGE EXAMPLES
-#include <stdalias.h>
+#include <unstdalias.h>
 
 .SH SEE ALSO
 .B stdlib(3)

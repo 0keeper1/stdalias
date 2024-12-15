@@ -1,6 +1,6 @@
 \input texinfo @c -*-texinfo-*-
-@setfilename stdalias.texi
-@settitle stdalias Documentation
+@setfilename unstdalias.texi
+@settitle unstdalias Documentation
 
 @chapter Types
 

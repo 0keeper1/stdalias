@@ -1,4 +1,4 @@
-project('stdalias',
+project('unstdalias',
         'c',
         version : '1.0.0',
         license : 'MIT',
@@ -10,12 +10,12 @@ lib_args = ['-DBUILDING_MESON_LIBRARY']
 
 headers = include_directories('include')
 
-header_file = files('include/stdalias.h')
+header_file = files('include/unstdalias.h')
 
-man_file = files('man/stdalias.3')
+man_file = files('man/unstdalias.3')
 
 stdalias_lib = static_library(
-        'libstdalias',
+        'libunstdalias',
         include_directories : headers,
         sources : [],
         install : true
@@ -31,8 +31,8 @@ install_man(man_file)
 install_headers(header_file)
 
 pkg_config.generate(
-        filebase: 'stdalias',
+        filebase: 'unstdalias',
         version : '1.0.0',
-        name: 'stdalias',
-        description: 'A single-header library providing standard type aliases',
+        name: 'unstdalias',
+        description: 'A single-header library providing unstandard type aliases',
 )
