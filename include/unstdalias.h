@@ -238,6 +238,103 @@ typedef double f64;
  */
 typedef long double f128;
 
+
+/**
+ * @brief Fast signed integer with a minimum width of 8 bits.
+ *
+ * This type provides a signed integer that is at least 8 bits wide. The compiler
+ * selects the most efficient size for the target platform, ensuring optimal performance.
+ *
+ * @attention Use this type when performance is more critical than exact size.
+ *
+ * @see https://en.cppreference.com/w/c/types/integer
+ */
+typedef int_fast8_t fi8;
+
+/**
+ * @brief Fast unsigned integer with a minimum width of 8 bits.
+ *
+ * This type defines an unsigned integer with at least 8 bits, optimized for
+ * platform-specific performance.
+ *
+ * @attention Be cautious of implicit type conversions when mixing signed and unsigned types.
+ *
+ * @see https://en.cppreference.com/w/c/types/integer
+ */
+typedef uint_fast8_t fu8;
+
+/**
+ * @brief Fast signed integer with a minimum width of 16 bits.
+ *
+ * This type guarantees at least 16 bits but may be larger for performance reasons.
+ * It is ideal when precise size is less critical than processing speed.
+ *
+ * @attention Consider potential memory overhead due to platform-specific optimizations.
+ *
+ * @see https://en.cppreference.com/w/c/types/integer
+ */
+typedef int_fast16_t fi16;
+
+/**
+ * @brief Fast unsigned integer with a minimum width of 16 bits.
+ *
+ * An unsigned integer type of at least 16 bits, optimized for the fastest
+ * size available on the platform.
+ *
+ * @attention Avoid using for fixed-size protocols or data serialization.
+ *
+ * @see https://en.cppreference.com/w/c/types/integer
+ */
+typedef uint_fast16_t fu16;
+
+/**
+ * @brief Fast signed integer with a minimum width of 32 bits.
+ *
+ * A signed integer type ensuring a minimum of 32 bits while potentially being larger
+ * for performance reasons.
+ *
+ * @attention Ensure compatibility with libraries expecting fixed-width types like `int32_t`.
+ *
+ * @see https://en.cppreference.com/w/c/types/integer
+ */
+typedef int_fast32_t fi32;
+
+/**
+ * @brief Fast unsigned integer with a minimum width of 32 bits.
+ *
+ * An unsigned integer of at least 32 bits, chosen for maximum speed by the compiler.
+ * Use it for unsigned data that doesn't require exact size constraints.
+ *
+ * @attention This type might occupy more memory than expected on some platforms.
+ *
+ * @see https://en.cppreference.com/w/c/types/integer
+ */
+typedef uint_fast32_t fu32;
+
+/**
+ * @brief Fast signed integer with a minimum width of 64 bits.
+ *
+ * This type guarantees at least 64 bits but may be larger for performance
+ * optimization. Useful for large numerical computations.
+ *
+ * @attention Memory consumption might increase due to compiler optimizations.
+ *
+ * @see https://en.cppreference.com/w/c/types/integer
+ */
+typedef int_fast64_t fi64;
+
+/**
+ * @brief Fast unsigned integer with a minimum width of 64 bits.
+ *
+ * An unsigned integer with at least 64 bits, optimized for speed. It is often
+ * used in performance-critical applications involving large data sets.
+ *
+ * @attention Check platform-specific limits to avoid unexpected size increases.
+ *
+ * @see https://en.cppreference.com/w/c/types/integer
+ */
+typedef uint_fast64_t fu64;
+
 /**
  * @brief Largest signed integer type on the target platform
  *
