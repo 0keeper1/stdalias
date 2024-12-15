@@ -23,7 +23,7 @@ unstdalias_lib = static_library(
 
 unstdalias_dep = declare_dependency(
         include_directories : headers,
-        link_with : stdalias_lib
+        link_with : unstdalias_lib
 )
 
 install_man(man_file)
