@@ -1,6 +1,6 @@
 project('unstdalias',
         'c',
-        version : '1.0.0',
+        version : '1.1.0',
         license : 'MIT',
         default_options : ['warning_level=3', 'c_std=gnu23'])
 
@@ -32,7 +32,7 @@ install_headers(header_file)
 
 pkg_config.generate(
         filebase: 'unstdalias',
-        version : '1.0.0',
+        version : '1.1.0',
         name: 'unstdalias',
         description: 'A single-header library providing unstandard type aliases',
 )
