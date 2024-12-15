@@ -14,14 +14,14 @@ header_file = files('include/unstdalias.h')
 
 man_file = files('man/unstdalias.3')
 
-stdalias_lib = static_library(
+unstdalias_lib = static_library(
         'libunstdalias',
         include_directories : headers,
         sources : [],
         install : true
 )
 
-stdalias_dep = declare_dependency(
+unstdalias_dep = declare_dependency(
         include_directories : headers,
         link_with : stdalias_lib
 )
