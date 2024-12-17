@@ -414,7 +414,7 @@ typedef wint_t wint;
  *
  * @see https://en.cppreference.com/w/c/types/struct
  */
-#define struct {usize cap; wchar* pointer; usize len;} wstring
+#define wstring struct {usize cap; wchar* pointer; usize len;}
 
 /**
  * @brief Defines a struct representing a standard character string.
@@ -428,4 +428,4 @@ typedef wint_t wint;
  *
  * @see https://en.cppreference.com/w/c/types/struct
  */
-#define struct {usize cap; char* pointer; usize len;} string
+#define string struct {usize cap; char* pointer; usize len;}
